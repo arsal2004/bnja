@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,900&family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    font-family: 'Bodoni Moda', serif;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.2rem;
+    padding-top: 130px;
+    padding-bottom: 201px;
+    gap: 20px;
+    background: linear-gradient(to right, #041308, #0b3317);
+    
+}
+.left-text{
+    flex-basis: 30%;
+}
+.heading{
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+}
+.subheading{
+    margin-top: 20px;
+    text-align: center;
+    color: #ddd;
+}
+.gallery{
+    flex-basis: 50%;
+    display: grid;
+    gap: 8px;
+    height: 500px;
+    grid-template-areas: "waterfall hill hill"
+                         "waterfall ocean rain"
+                         "mountain mountain rain"
+                         "tree beach beach";
+}
+.box{
+    background-size: cover;
+    background-position: top;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    background-blend-mode: hard-light;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+
+}
+.box:hover{
+    background-color: #999;
+    background-position: bottom;
+    box-shadow: 0 0 4px #fff;
+}
+#waterfall{
+    grid-area: waterfall;
+}
+#hills{
+    grid-area: hill;
+}
+#ocean{
+    grid-area: ocean;
+}
+#rain{
+    grid-area: rain;
+}
+#mountains{
+    grid-area: mountain;
+}
+#trees{
+    grid-area: tree;
+}
+#beach{
+    grid-area: beach;
+}
+
+ /*media queries for width less than 1040px  */
+ @media screen and (max-width: 1024px) {
+    .container{
+        flex-direction: column;
+    }
+    .gallery{
+        width: 100%;
+        grid-auto-rows: 220px;
+        grid-template-areas: "waterfall waterfall waterfall"
+                         "hill hill hill"
+                         "ocean ocean ocean"
+                         "rain rain rain"
+                         "mountain mountain mountain"
+                         "tree tree tree"
+                         "beach beach beach";
+        
+    }
+    
+    
+ }
